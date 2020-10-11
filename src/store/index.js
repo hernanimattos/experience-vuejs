@@ -2,23 +2,31 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import HTTP from '../provider';
 
+import * as allStore from '../views/*/store/index.js';
+
+console.log({ ...allStore });
+
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
+	strict: true,
 	state: {
-		products: [],
+		allProducts: [],
 	},
 	mutations: {
-		getAllProducts(state, payload) {
-			state.products = payload;
+		setAllProducts(state, payload) {
+			state.allProducts = payload;
 		},
 	},
 	actions: {
 		async getAllProducts({ commit }, _) {
 			const response = await HTTP.get();
-			commit('getAllProducts', response.data);
+			commit('setAllProducts', response.data);
 		},
 	},
-	getters: {},
-	modules: {},
+	modules: {
+		...allStore,
+	},
 });
+
+export default store;
