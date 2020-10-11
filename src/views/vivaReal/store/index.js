@@ -1,7 +1,8 @@
 const vivaReal = {
 	namespaced: true,
+	name: '',
 	state: {
 		products: [],
 	},
 };
-export default vivaReal;
+export { vivaReal as default };

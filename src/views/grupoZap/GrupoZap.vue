@@ -6,7 +6,16 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+const { mapState, mapActions, mapGetters } = createNamespacedHelpers('grupoZap');
 export default {
-  name:'GrupoZap'
+  name:'GrupoZap',
+  computed: {
+    ...mapState(['products']),
+    ...mapGetters(['teste'])
+  },
+  created(){
+    console.log(this.teste)
+  }
 }
 </script>

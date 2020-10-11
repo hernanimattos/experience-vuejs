@@ -1,11 +1,18 @@
 <template>
   <div class="home">
- teste
+  teste
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'Home',
+  methods: {
+		...mapActions(['getAllProducts']),
+  },
+  created() {
+    this.getAllProducts()
+  }
 }
 </script>
