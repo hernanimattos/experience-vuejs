@@ -24,6 +24,17 @@ const store = new Vuex.Store({
 			commit('setAllProducts', response.data);
 		},
 	},
+	getters: {
+		globalProducts(state) {
+			const filterUsableAreasValid = (prod) => prod.usableAreas > 0;
+			const filterLatAndLonZeroValues = (prod) =>
+				prod.address.geoLocation.location.lat !== 0 &&
+				prod.address.geoLocation.location.lon !== 0;
+			return state.allProducts.filter((prod) => {
+				return filterUsableAreasValid(prod) && filterLatAndLonZeroValues(prod);
+			});
+		},
+	},
 	modules: {
 		...allStore,
 	},

@@ -7,15 +7,15 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-const { mapState, mapActions, mapGetters } = createNamespacedHelpers('grupoZap');
+const { mapState, mapGetters } = createNamespacedHelpers('grupoZap');
 export default {
   name:'GrupoZap',
   computed: {
     ...mapState(['products']),
-    ...mapGetters(['teste'])
+    ...mapGetters(['filterZapGroupProducts'])
   },
   created(){
-    console.log(this.teste)
+    console.log(this.filterZapGroupProducts)
   }
 }
 </script>
