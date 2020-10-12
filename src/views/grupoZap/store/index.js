@@ -13,13 +13,14 @@ import {
 const grupoZap = {
 	namespaced: true,
 	getters: {
-		filterZapGroupProducts(store, _, rootState) {
+		filterZapGroupProducts(store, getters, rootState, rootGetters) {
 			const conditions = {
 				minValue: 3500,
 				businessType: 'SALE',
 			};
-			const { allProducts } = rootState;
-			const prodForSale = allProducts.filter(
+			const { globalProducts } = rootGetters;
+
+			const prodForSale = globalProducts.filter(
 				(prod) => prod.pricingInfos.businessType === conditions.businessType,
 			);
 

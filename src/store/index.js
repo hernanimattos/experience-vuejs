@@ -4,8 +4,6 @@ import HTTP from '../provider';
 
 import * as allStore from '../views/*/store/index.js';
 
-console.log({ ...allStore });
-
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -28,8 +26,8 @@ const store = new Vuex.Store({
 		globalProducts(state) {
 			const filterUsableAreasValid = (prod) => prod.usableAreas > 0;
 			const filterLatAndLonZeroValues = (prod) =>
-				prod.address.geoLocation.location.lat !== 0 &&
-				prod.address.geoLocation.location.lon !== 0;
+				prod.address.geoLocation.location.lat != 0 &&
+				prod.address.geoLocation.location.lon != 0;
 			return state.allProducts.filter((prod) => {
 				return filterUsableAreasValid(prod) && filterLatAndLonZeroValues(prod);
 			});

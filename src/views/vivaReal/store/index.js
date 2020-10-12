@@ -13,9 +13,9 @@ const vivaReal = {
 		products: [],
 	},
 	getters: {
-		filterVivaRealProducts(state, _, rootState) {
-			const { allProducts } = rootState;
-			const rentalproducts = allProducts.filter(
+		filterVivaRealProducts(state, getters, rootState, rootGetters) {
+			const { globalProducts } = rootGetters;
+			const rentalproducts = globalProducts.filter(
 				(prod) => prod.pricingInfos.businessType === 'RENTAL',
 			);
 			return rentalproducts.filter((prod) => {

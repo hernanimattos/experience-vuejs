@@ -17,7 +17,8 @@ const routes = [
 		children: [
 			{
 				path: ':id/detalhes',
-				component: () => import('../components/product/ProductDetails.vue'),
+				component: () =>
+					import('../components/containers/product/ProductDetails.vue'),
 			},
 		],
 	},
@@ -28,7 +29,8 @@ const routes = [
 		children: [
 			{
 				path: ':id/detalhes',
-				component: () => import('../components/product/ProductDetails.vue'),
+				component: () =>
+					import('../components/containers/product/ProductDetails.vue'),
 			},
 		],
 	},
