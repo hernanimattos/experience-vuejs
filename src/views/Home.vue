@@ -1,18 +1,9 @@
 <template>
-  <div class="home">
-  teste
-  </div>
+	<div></div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 export default {
-  name: 'Home',
-  methods: {
-		...mapActions(['getAllProducts']),
-  },
-  created() {
-    this.getAllProducts()
-  }
-}
+	name: 'Home'
+};
 </script>

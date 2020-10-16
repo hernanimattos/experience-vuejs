@@ -1,19 +1,36 @@
 import {
 	filterMinValueForSale,
 	minValueExeptionForSale,
-} from '../utils/valueRule';
+} from '../utils/index.js';
 
 import {
 	filterMinLon,
 	filterMaxLon,
 	filterMaxLat,
 	filterMinLat,
-} from '../../utils/bundBoxConditions';
+	paginate,
+} from '../../utils/index.js';
 
 const grupoZap = {
 	namespaced: true,
+	state: {
+		productDetails: {},
+	},
+	mutations: {
+		prodDetails(state, payload) {
+			state.productDetails = payload;
+		},
+	},
+	actions: {
+		getProductById({ commit, getters }, id) {
+			const { filterZapGroupProducts } = getters;
+			const product = filterZapGroupProducts.find((prod) => prod.id === id);
+
+			commit('prodDetails', product);
+		},
+	},
 	getters: {
-		filterZapGroupProducts(store, getters, rootState, rootGetters) {
+		filterZapGroupProducts(state, getters, rootState, rootGetters) {
 			const conditions = {
 				minValue: 3500,
 				businessType: 'SALE',
@@ -45,6 +62,11 @@ const grupoZap = {
 					return prod;
 				}
 			});
+		},
+		paginate(state, getters) {
+			const { filterZapGroupProducts } = getters;
+			const chunck = paginate(filterZapGroupProducts, 20);
+			return chunck;
 		},
 	},
 };

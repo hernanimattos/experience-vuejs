@@ -12,25 +12,41 @@ const routes = [
 	},
 	{
 		path: '/grupo-zap',
-		name: 'Grupo Zap',
+		name: 'grupozap',
 		component: () => import('../views/grupoZap/GrupoZap.vue'),
+		redirect: { name: 'group:list' },
 		children: [
 			{
-				path: ':id/detalhes',
+				path: '/',
+				name: 'group:list',
 				component: () =>
-					import('../components/containers/product/ProductDetails.vue'),
+					import('../containers/grupoZap/product/ProductsList.vue'),
+			},
+			{
+				path: '/grupo-zap/:id',
+				name: 'group:details',
+				component: () =>
+					import('../containers/grupoZap/product/ProductDetails.vue'),
 			},
 		],
 	},
 	{
 		path: '/viva-real',
-		name: 'Viva Real',
+		name: 'vivareal',
+		redirect: { name: 'vivareal:list' },
 		component: () => import('../views/vivaReal/VivaReal.vue'),
 		children: [
 			{
-				path: ':id/detalhes',
+				path: '/',
+				name: 'vivareal:list',
 				component: () =>
-					import('../components/containers/product/ProductDetails.vue'),
+					import('../containers/vivaReal/product/ProductsList.vue'),
+			},
+			{
+				path: '/vivareal/:id',
+				name: 'vivareal:details',
+				component: () =>
+					import('../containers/vivaReal/product/ProductDetails.vue'),
 			},
 		],
 	},
