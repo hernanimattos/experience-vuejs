@@ -1,6 +1,5 @@
 <template>
 	<div class="viva-real">
-		<h1>Viva real</h1>
 		<router-view></router-view>
 	</div>
 </template>
@@ -12,9 +11,6 @@ export default {
 	name: 'VivaReal',
 	computed: {
 		...mapGetters(['filterVivaRealProducts'])
-	},
-	created() {
-		console.log(this.filterVivaRealProducts);
 	}
 };
 </script>

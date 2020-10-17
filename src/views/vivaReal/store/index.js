@@ -1,10 +1,12 @@
-import { filterMinValue } from '../utils/valueRule';
+import { filterMinValue } from '../utils/index.js';
+
 import {
 	filterMinLon,
 	filterMaxLon,
 	filterMaxLat,
 	filterMinLat,
-} from '../../utils/bundBoxConditions';
+	paginate,
+} from '../../utils/index.js';
 
 const vivaReal = {
 	namespaced: true,
@@ -39,6 +41,11 @@ const vivaReal = {
 					return prod;
 				}
 			});
+		},
+		paginate(state, getters) {
+			const { filterVivaRealProducts } = getters;
+			const chunck = paginate(filterVivaRealProducts, 20);
+			return chunck;
 		},
 	},
 };

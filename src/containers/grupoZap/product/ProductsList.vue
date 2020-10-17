@@ -6,6 +6,7 @@
 			:title="prod.listingStatus"
 			:image="prod.images"
 			:productId="prod.id"
+			:businessType="prod.pricingInfos.businessType"
 			show
 		/>
 		<div class="pagination">

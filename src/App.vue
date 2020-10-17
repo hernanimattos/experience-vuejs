@@ -77,5 +77,13 @@ img {
 .grupo-zap .btn {
 	background-color: var(--zap-primary-color);
 }
+.pagination {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 3rem;
+	background-color: blanchedalmond;
+}
 </style>
 

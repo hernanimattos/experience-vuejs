@@ -24,7 +24,7 @@
 		</div>
 
 		{{productId}}
-		<h1>{{title}}</h1>
+		<h1>{{businessType}}</h1>
 	</article>
 </template>
 
@@ -59,6 +59,9 @@ export default {
 		show: {
 			type: Boolean,
 			default: false
+		},
+		businessType: {
+			type: String
 		}
 	},
 	directives: {

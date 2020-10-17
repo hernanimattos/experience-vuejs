@@ -6,6 +6,7 @@
 			:title="prod.listingStatus"
 			:image="prod.images"
 			:productId="prod.id"
+			:businessType="prod.pricingInfos.businessType"
 			show
 		/>
 		<div class="pagination">
@@ -30,7 +31,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-const { mapGetters } = createNamespacedHelpers('grupoZap');
+const { mapGetters } = createNamespacedHelpers('vivaReal');
 import Card from '../../../components/ui/Card';
 export default {
 	data() {

@@ -43,12 +43,4 @@ export default {
 .menu-item_viva img {
 	width: 100%;
 }
-.pagination {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	min-height: 3rem;
-	background-color: blanchedalmond;
-}
 </style>
