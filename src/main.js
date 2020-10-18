@@ -4,10 +4,33 @@ import store from './store';
 import router from './router';
 
 import VueAwesomeSwiper from 'vue-awesome-swiper';
-
-// import style (>= Swiper 6.x)
 import 'swiper/css/swiper.css';
-Vue.use(VueAwesomeSwiper /* { default options with global component } */);
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+	faBed,
+	faUserSecret,
+	faBath,
+	faDollarSign,
+	faCar,
+	faMapMarkedAlt,
+	faHome,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+library.add(
+	faBed,
+	faBath,
+	faDollarSign,
+	faCar,
+	faUserSecret,
+	faMapMarkedAlt,
+	faHome,
+);
+Vue.component('f-icon', FontAwesomeIcon);
+
+Vue.use(VueAwesomeSwiper);
+
 Vue.config.productionTip = false;
 
 new Vue({

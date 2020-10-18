@@ -10,7 +10,7 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 const { mapActions, mapState } = createNamespacedHelpers('grupoZap');
-import Card from '@/components/ui/Card';
+import Card from '../../../../components/ui/Card';
 export default {
 	name: 'ProductsDetails',
 	computed: {

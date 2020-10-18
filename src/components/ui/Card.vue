@@ -18,13 +18,28 @@
 			class="details"
 			v-if="show"
 		>
-			<router-link :to="{name:'group:details', params: {id:`${productId}`}}">
-				Detalhes
+			<div class="card-infos">
+				<div class="card-infos__data">
+					<f-icon icon="dollar-sign" />
+					<p>{{salePrice}}</p>
+				</div>
+				<div class="card-infos__data">
+					<f-icon icon="home" />
+					<p>{{usableAreas}} metros</p>
+				</div>
+				<div class="card-infos__data">
+					<f-icon icon="map-marked-alt" />
+					<p>{{city}}</p>
+				</div>
+			</div>
+			<router-link
+				:to="{name:'group:details', params: {id:`${productId}`}}"
+				class="more-details"
+			>
+				mais detalhes
 			</router-link>
 		</div>
 
-		{{productId}}
-		<h1>{{businessType}}</h1>
 	</article>
 </template>
 
@@ -50,9 +65,6 @@ export default {
 		image: {
 			type: Array
 		},
-		title: {
-			type: String
-		},
 		productId: {
 			type: String
 		},
@@ -61,6 +73,36 @@ export default {
 			default: false
 		},
 		businessType: {
+			type: String
+		},
+		bethrooms: {
+			type: Number
+		},
+		bedrooms: {
+			type: Number
+		},
+		parkingSpaces: {
+			type: Number
+		},
+		rentalPrice: {
+			type: String
+		},
+		monthlyCondoFee: {
+			type: String
+		},
+		salePrice: {
+			type: String
+		},
+		iptu: {
+			type: String
+		},
+		usableAreas: {
+			type: Number
+		},
+		city: {
+			type: String
+		},
+		neighborhood: {
 			type: String
 		}
 	},
@@ -81,7 +123,9 @@ export default {
 	padding: 1rem;
 	transition: 0.5s;
 }
-
+.card .swiper-container {
+	margin-bottom: 1rem;
+}
 .img-wrapper > img {
 	margin-top: 1rem;
 	width: 100%;
@@ -91,5 +135,22 @@ export default {
 
 .img-wrapper {
 	display: flex;
+}
+.card-infos *,
+.card-infos {
+	display: flex;
+	justify-content: space-between;
+}
+.card-infos__data {
+	justify-content: space-between;
+}
+.more-details {
+	display: block;
+	text-align: center;
+	padding: 1rem;
+	background: red;
+	text-transform: uppercase;
+	margin-top: 1rem;
+	color: #fff;
 }
 </style>

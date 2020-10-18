@@ -20,13 +20,13 @@ const routes = [
 				path: '/',
 				name: 'group:list',
 				component: () =>
-					import('../containers/grupoZap/product/ProductsList.vue'),
+					import('../views/grupoZap/containers/product/ProductsList.vue'),
 			},
 			{
 				path: '/grupo-zap/:id',
 				name: 'group:details',
 				component: () =>
-					import('../containers/grupoZap/product/ProductDetails.vue'),
+					import('../views/grupoZap/containers/product/ProductDetails.vue'),
 			},
 		],
 	},
@@ -40,13 +40,13 @@ const routes = [
 				path: '/',
 				name: 'vivareal:list',
 				component: () =>
-					import('../containers/vivaReal/product/ProductsList.vue'),
+					import('../views/vivaReal/containers/product/ProductsList.vue'),
 			},
 			{
 				path: '/vivareal/:id',
 				name: 'vivareal:details',
 				component: () =>
-					import('../containers/vivaReal/product/ProductDetails.vue'),
+					import('../views/vivaReal/containers/product/ProductDetails.vue'),
 			},
 		],
 	},

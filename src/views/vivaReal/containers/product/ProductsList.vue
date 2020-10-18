@@ -32,7 +32,7 @@
 <script>
 import { createNamespacedHelpers } from 'vuex';
 const { mapGetters } = createNamespacedHelpers('vivaReal');
-import Card from '../../../components/ui/Card';
+import Card from '../../../../components/ui/Card';
 export default {
 	data() {
 		return {
@@ -61,13 +61,4 @@ export default {
 };
 </script>
 
-<style>
-.pagination {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	min-height: 3rem;
-	background-color: blanchedalmond;
-}
-</style>
+

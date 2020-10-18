@@ -27,7 +27,7 @@ export default {
 
 <style >
 :root {
-	--white-color: #fff;
+	--white: #fff;
 	--viva-primary-color: #1190cd;
 	--zap-primary-color: #ff5a00;
 	--zap-secundary-color: #027ba8;
@@ -68,22 +68,26 @@ img {
 }
 
 .viva-real {
-	background-color: red;
+	padding: 1rem;
+	background-color: var(--viva-primary-color);
 }
 
 .grupo-zap {
-	background-color: blue;
-}
-.grupo-zap .btn {
+	padding: 1rem;
 	background-color: var(--zap-primary-color);
 }
+.grupo-zap .btn {
+	background-color: var(--zap-complement-color);
+}
 .pagination {
+	margin-top: 1rem;
+	padding: 1rem;
 	display: flex;
 	width: 100%;
 	align-items: center;
 	justify-content: space-between;
 	min-height: 3rem;
-	background-color: blanchedalmond;
+	background-color: var(--white);
 }
 </style>
 
