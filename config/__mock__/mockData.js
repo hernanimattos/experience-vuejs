@@ -1,4 +1,4 @@
-const allProDucts = [
+const mockData = [
 	{
 		usableAreas: 70,
 		listingType: 'USED',
@@ -695,4 +695,4 @@ const allProDucts = [
 	},
 ];
 
-module.exports = allProDucts;
+module.exports = mockData;

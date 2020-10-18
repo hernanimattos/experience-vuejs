@@ -1,4 +1,8 @@
-import { valuePerUsableArea, filterMinValueForSale } from './checkValueRange';
+import {
+	valuePerUsableArea,
+	filterMinValueForSale,
+	minValueExeptionForSale,
+} from './checkValueRange';
 
 describe('Check value rule', () => {
 	it('expect false ', () => {
@@ -16,5 +20,13 @@ describe('Check value rule', () => {
 			usableArea: 70,
 		};
 		expect(valuePerUsableArea(params)).toBe(17);
+	});
+	it('expect false', () => {
+		const params = {
+			price: 1200,
+			usableArea: 30,
+			limitValue: 200,
+		};
+		expect(minValueExeptionForSale(params)).toBe(false);
 	});
 });
