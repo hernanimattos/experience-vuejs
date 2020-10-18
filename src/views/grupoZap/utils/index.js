@@ -1,3 +1,6 @@
-import { filterMinValueForSale, minValueExeptionForSale } from './valueRule';
+import {
+	filterMinValueForSale,
+	minValueExeptionForSale,
+} from './checkValueRange';
 
 export { filterMinValueForSale, minValueExeptionForSale };

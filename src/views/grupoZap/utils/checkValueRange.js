@@ -1,6 +1,6 @@
-const valuePerUsableArea = ({ price, usableArea }) =>
-	parseInt(price / usableArea, 10);
-
+const valuePerUsableArea = ({ price, usableArea }) => {
+	return parseInt(price / usableArea, 10);
+};
 const filterMinValueForSale = ({ limitValue, price, usableArea }) => {
 	return valuePerUsableArea({ price, usableArea }) > parseInt(limitValue, 10);
 };
@@ -13,4 +13,4 @@ const minValueExeptionForSale = ({ limitValue, price, usableArea }) => {
 	);
 };
 
-export { filterMinValueForSale, minValueExeptionForSale };
+export { filterMinValueForSale, minValueExeptionForSale, valuePerUsableArea };

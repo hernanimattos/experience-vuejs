@@ -20,13 +20,11 @@ const store = new Vuex.Store({
 		// eslint-disable-next-line no-unused-vars
 		async getAllProducts({ commit }, _) {
 			const response = await HTTP.get();
-			console.log(response.data);
 			commit('setAllProducts', response.data);
 		},
 	},
 	getters: {
 		globalProducts(state) {
-			console.log('globalProducts');
 			const filterUsableAreasValid = (prod) => prod.usableAreas > 0;
 			const filterLatAndLonZeroValues = (prod) =>
 				prod.address.geoLocation.location.lat != 0 &&

@@ -10,7 +10,7 @@ const filterMinLon = ({ minLon }) => {
 };
 
 const filterMaxLon = ({ maxLon }) => {
-	return parseFloat(boundingBox.maxlon) > parseFloat(maxLon);
+	return parseFloat(boundingBox.maxlon) < parseFloat(maxLon);
 };
 
 const filterMinLat = ({ minLat }) => {
