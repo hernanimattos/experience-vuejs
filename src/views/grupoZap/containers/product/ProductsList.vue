@@ -1,23 +1,25 @@
 <template>
-	<div class="products-list">
+	<div class="products-list ">
 
-		<Card
-			v-for="prod in paginate[page]"
-			:key="prod.id"
-			:image="prod.images"
-			:productId="prod.id"
-			:businessType="prod.pricingInfos.businessType"
-			:bethrooms="prod.bathrooms"
-			:bedrooms="prod.bedrooms"
-			:parkingSpaces="prod.parkingSpaces"
-			:salePrice="prod.pricingInfos.price"
-			:iptu="prod.pricingInfos.yearlyIptu"
-			:usableAreas="prod.usableAreas"
-			:city="prod.address.city"
-			:neighborhood="prod.address.neighborhood"
-			:redirect="'group:details'"
-			show
-		/>
+		<div class="page-list">
+			<Card
+				v-for="prod in paginate[page]"
+				:key="prod.id"
+				:image="prod.images"
+				:productId="prod.id"
+				:businessType="prod.pricingInfos.businessType"
+				:bethrooms="prod.bathrooms"
+				:bedrooms="prod.bedrooms"
+				:parkingSpaces="prod.parkingSpaces"
+				:salePrice="prod.pricingInfos.price"
+				:iptu="prod.pricingInfos.yearlyIptu"
+				:usableAreas="prod.usableAreas"
+				:city="prod.address.city"
+				:neighborhood="prod.address.neighborhood"
+				:redirect="'group:details'"
+				show
+			/>
+		</div>
 
 		<div class="pagination">
 			<button

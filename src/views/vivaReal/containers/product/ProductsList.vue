@@ -1,24 +1,27 @@
 <template>
-	<div class="products-list">
-		<Card
-			v-for="prod in paginate[page]"
-			:key="prod.id"
-			:image="prod.images"
-			:productId="prod.id"
-			:businessType="prod.pricingInfos.businessType"
-			:bethrooms="prod.bathrooms"
-			:bedrooms="prod.bedrooms"
-			:parkingSpaces="prod.parkingSpaces"
-			:rentalPrice="prod.pricingInfos.rentalTotalPrice"
-			:monthlyCondoFee="prod.pricingInfos.monthlyCondoFee"
-			:iptu="prod.pricingInfos.yearlyIptu"
-			:usableAreas="prod.usableAreas"
-			:city="prod.address.city"
-			:neighborhood="prod.address.neighborhood"
-			:redirect="'vivareal:details'"
-			:brand="prod['vivaReal']|| prod['grupoZap']"
-			show
-		/>
+	<div class="products-list ">
+		<div class="page-list">
+			<Card
+				v-for="prod in paginate[page]"
+				:key="prod.id"
+				:image="prod.images"
+				:productId="prod.id"
+				:businessType="prod.pricingInfos.businessType"
+				:bethrooms="prod.bathrooms"
+				:bedrooms="prod.bedrooms"
+				:parkingSpaces="prod.parkingSpaces"
+				:rentalPrice="prod.pricingInfos.rentalTotalPrice"
+				:monthlyCondoFee="prod.pricingInfos.monthlyCondoFee"
+				:iptu="prod.pricingInfos.yearlyIptu"
+				:usableAreas="prod.usableAreas"
+				:city="prod.address.city"
+				:neighborhood="prod.address.neighborhood"
+				:redirect="'vivareal:details'"
+				:brand="prod['vivaReal']|| prod['grupoZap']"
+				show
+			/>
+		</div>
+
 		<div class="pagination">
 			<button
 				class="btn"

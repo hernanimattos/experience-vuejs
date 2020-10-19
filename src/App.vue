@@ -77,6 +77,23 @@ img {
 	min-height: 3rem;
 	background-color: var(--white);
 }
+.page-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+}
+@media (max-width: 968px) {
+	.page-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 768px) {
+	.page-list {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
 
 .viva-real {
 	padding: 1rem;
