@@ -1,6 +1,6 @@
 # new-front
 
-## To run in local host
+## To run in localhost
 
 ```
 - You need nodejs, npm or yarn installed in your machine
