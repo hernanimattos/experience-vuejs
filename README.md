@@ -3,7 +3,7 @@
 ## To run in local host
 
 ```
-- You need nodejs, npm and/or yarn installed in you machine
+- You need nodejs, npm or yarn installed in your machine
 - Clone this repo enter in the project folder and run in your terminal:
     -> yarn install || npm i
     -> yarn serve || npm run serve
