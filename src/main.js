@@ -32,7 +32,12 @@ Vue.component('f-icon', FontAwesomeIcon);
 Vue.use(VueAwesomeSwiper);
 
 Vue.config.productionTip = false;
-
+Vue.filter('currency', function(value) {
+	return parseFloat(value).toLocaleString('pt-br', {
+		style: 'currency',
+		currency: 'BRL',
+	});
+});
 new Vue({
 	store,
 	router,

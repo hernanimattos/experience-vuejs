@@ -3,10 +3,20 @@
 		<Card
 			v-for="prod in paginate[page]"
 			:key="prod.id"
-			:title="prod.listingStatus"
 			:image="prod.images"
 			:productId="prod.id"
 			:businessType="prod.pricingInfos.businessType"
+			:bethrooms="prod.bathrooms"
+			:bedrooms="prod.bedrooms"
+			:parkingSpaces="prod.parkingSpaces"
+			:rentalPrice="prod.pricingInfos.rentalTotalPrice"
+			:monthlyCondoFee="prod.pricingInfos.monthlyCondoFee"
+			:iptu="prod.pricingInfos.yearlyIptu"
+			:usableAreas="prod.usableAreas"
+			:city="prod.address.city"
+			:neighborhood="prod.address.neighborhood"
+			:redirect="'vivareal:details'"
+			:brand="prod['vivaReal']|| prod['grupoZap']"
 			show
 		/>
 		<div class="pagination">
@@ -49,7 +59,6 @@ export default {
 		},
 		next() {
 			if (this.paginate.length - 1 == this.page) {
-				console.log('this.page');
 				return;
 			}
 			this.page++;

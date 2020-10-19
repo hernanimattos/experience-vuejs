@@ -61,23 +61,11 @@ img {
 	margin: 0 auto;
 	max-width: 1200px;
 }
+
 .btn {
 	padding: 1rem;
 	cursor: pointer;
 	min-width: 7rem;
-}
-
-.viva-real {
-	padding: 1rem;
-	background-color: var(--viva-primary-color);
-}
-
-.grupo-zap {
-	padding: 1rem;
-	background-color: var(--zap-primary-color);
-}
-.grupo-zap .btn {
-	background-color: var(--zap-complement-color);
 }
 .pagination {
 	margin-top: 1rem;
@@ -88,6 +76,26 @@ img {
 	justify-content: space-between;
 	min-height: 3rem;
 	background-color: var(--white);
+}
+
+.viva-real {
+	padding: 1rem;
+	background-color: var(--viva-primary-color);
+}
+
+.viva-real .more-details {
+	background-color: var(--viva-primary-color);
+	cursor: pointer;
+}
+.grupo-zap {
+	padding: 1rem;
+	background-color: var(--zap-primary-color);
+}
+.grupo-zap .btn {
+	background-color: var(--zap-complement-color);
+}
+.grupo-zap .more-details {
+	background-color: var(--zap-complement-color);
 }
 </style>
 

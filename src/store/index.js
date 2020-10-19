@@ -20,6 +20,7 @@ const store = new Vuex.Store({
 		// eslint-disable-next-line no-unused-vars
 		async getAllProducts({ commit }, _) {
 			const response = await HTTP.get();
+			console.log('--++++');
 			commit('setAllProducts', response.data);
 		},
 	},

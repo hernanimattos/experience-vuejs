@@ -14,30 +14,52 @@
 			<div class="swiper-button-prev"></div>
 			<div class="swiper-pagination"></div>
 		</div>
-		<div
-			class="details"
-			v-if="show"
-		>
+		<div class="details">
 			<div class="card-infos">
-				<div class="card-infos__data">
-					<f-icon icon="dollar-sign" />
-					<p>{{salePrice}}</p>
+				<div
+					class="card-infos__data"
+					v-if="salePrice"
+				>
+					<p>{{salePrice | currency}}</p>
+				</div>
+				<div
+					class="card-infos__data"
+					v-if="rentalPrice"
+				>
+					<p>{{rentalPrice | currency}}</p>
 				</div>
 				<div class="card-infos__data">
 					<f-icon icon="home" />
-					<p>{{usableAreas}} metros</p>
+					<p class="meters">{{'\u00A0'}}{{usableAreas}} m<span>2</span></p>
 				</div>
 				<div class="card-infos__data">
 					<f-icon icon="map-marked-alt" />
-					<p>{{city}}</p>
+					<p>{{'\u00A0'}}{{city}}</p>
 				</div>
 			</div>
 			<router-link
-				:to="{name:'group:details', params: {id:`${productId}`}}"
+				v-if="redirect"
+				:to="{name:`${redirect}`, params: {id:`${productId}`}}"
 				class="more-details"
 			>
 				mais detalhes
 			</router-link>
+			<div
+				class="card-infos"
+				v-if="!redirect"
+			>
+
+				<div class="card-infos__data">
+					<h3>Bairro: </h3>
+					<p>{{neighborhood}}</p>
+				</div>
+				<div class="card-infos__data">
+					<h3>Condominio:{{'\u00A0'}}</h3>
+					<p>
+						{{monthlyCondoFee | currency}}</p>
+				</div>
+
+			</div>
 		</div>
 
 	</article>
@@ -104,6 +126,12 @@ export default {
 		},
 		neighborhood: {
 			type: String
+		},
+		redirect: {
+			type: String
+		},
+		brand: {
+			type: Boolean
 		}
 	},
 	directives: {
@@ -140,6 +168,7 @@ export default {
 .card-infos {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 0.3rem;
 }
 .card-infos__data {
 	justify-content: space-between;
@@ -152,5 +181,10 @@ export default {
 	text-transform: uppercase;
 	margin-top: 1rem;
 	color: #fff;
+}
+.meters > span {
+	font-size: 50%;
+	vertical-align: top;
+	content: '2';
 }
 </style>

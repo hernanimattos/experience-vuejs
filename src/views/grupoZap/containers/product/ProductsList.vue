@@ -10,13 +10,12 @@
 			:bethrooms="prod.bathrooms"
 			:bedrooms="prod.bedrooms"
 			:parkingSpaces="prod.parkingSpaces"
-			:rentalPrice="prod.pricingInfos.rentalTotalPrice"
-			:monthlyCondoFee="prod.pricingInfos.monthlyCondoFee"
 			:salePrice="prod.pricingInfos.price"
 			:iptu="prod.pricingInfos.yearlyIptu"
 			:usableAreas="prod.usableAreas"
 			:city="prod.address.city"
 			:neighborhood="prod.address.neighborhood"
+			:redirect="'group:details'"
 			show
 		/>
 

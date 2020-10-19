@@ -3,7 +3,7 @@ const vivaReal = {
 	namespaced: true,
 	name: 'vivaReal',
 	state: {
-		products: [],
+		productDetails: [],
 	},
 	...store,
 };
